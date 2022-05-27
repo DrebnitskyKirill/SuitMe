@@ -1,24 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux';
+import { addUserFetch } from '../../redux/reduxThunk/userThunk';
 
 function Registration() {
-  // const dispatch = useDispatch()
+
+  const dispatch = useDispatch()
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
-  
+
   const addUser = async (data) => {
-    // e.preventDefault()
-
-    
-     await fetch('/registration', {
-    method: 'POST',
-    headers: {"Content-Type": "Application/json"},
-    body: JSON.stringify(data),
-  })
-  // .then((res) => console.log(res))
-  // .then((data1) => console.log(data1))
-
-}
+    dispatch(addUserFetch(data));
+  };
 
   return (
     <form className="container center" onSubmit={handleSubmit(addUser)}>
