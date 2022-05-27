@@ -23,7 +23,7 @@ function Registration() {
       </div>
       <div className="container">
         <div className="container">
-          <input {...register("email", { required: 'Необходимо указать Email' })} type="email" className="validate center" placeholder='Введите Email' />
+          <input {...register("email", { required: 'Необходимо указать Email', pattern: {value:  /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$/, message: 'Необходимо указать @' } })} className="validate center" placeholder='Введите Email' />
           <div>{errors?.email && <p>{errors?.email?.message}</p>}</div>
         </div>
         <div className="container">
