@@ -1,4 +1,4 @@
-import { addUserAC } from "../actionCreators/userAC";
+import { addUserAC, logUserAC } from "../actionCreators/userAC";
 
 export const addUserFetch = (data) => {
 
@@ -13,3 +13,17 @@ export const addUserFetch = (data) => {
   }
 
 }
+
+export const logUserFetch = (data) => {
+
+  return (dispatch) => {
+  fetch('/login', {
+      method: 'POST',
+      headers: { "Content-Type": "Application/json" },
+      body: JSON.stringify(data),
+    })
+    .then(res => res.json())
+    .then(res => dispatch(logUserAC(res)))
+  }
+  
+};

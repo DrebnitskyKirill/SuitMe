@@ -5,7 +5,7 @@ import Registration from '../Registration/Registration';
 import Navbar from '../Navbar/Navbar';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Login from '../Login/Login';
-// import Logout from '../Logout/Logout';
+import Home from '../Home/Home';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path='/registration' element={<Registration />} />
           <Route path='/login' element={<Login />} />
-          {/* <Route path='/registration' element={<Logout />} /> */}
+          <Route path='/home' element={<Home />} />
         </Routes>
       </BrowserRouter>
    </>
