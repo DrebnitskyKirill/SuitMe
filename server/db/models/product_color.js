@@ -14,8 +14,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Product_color.init({
-    color_id: DataTypes.INTEGER,
-    product_id: DataTypes.INTEGER
+    color_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'Colors',
+        key: 'id',
+      }
+    },
+    product_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'Products',
+        key: 'id',
+      }
+    },
   }, {
     sequelize,
     modelName: 'Product_color',

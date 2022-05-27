@@ -14,8 +14,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Product_activity.init({
-    product_id: DataTypes.INTEGER,
-    activity_id: DataTypes.INTEGER
+    product_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'Products',
+        key: 'id',
+      }
+    },
+    activity_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'Activities',
+        key: 'id',
+      }
+    },
   }, {
     sequelize,
     modelName: 'Product_activity',

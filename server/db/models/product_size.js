@@ -14,8 +14,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Product_size.init({
-    product_id: DataTypes.INTEGER,
-    size_id: DataTypes.INTEGER
+    product_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'Products',
+        key: 'id',
+      }
+    },
+    size_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'Sizes',
+        key: 'id',
+      }
+    },
   }, {
     sequelize,
     modelName: 'Product_size',
