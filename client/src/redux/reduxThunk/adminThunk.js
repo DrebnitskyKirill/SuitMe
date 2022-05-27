@@ -1,13 +1,13 @@
-import { addUserAC } from "../actionCreators/userAC";
+import { addAdminAC } from "../actionCreators/adminAC";
 
-export const addUserFetch = (data) => {
+export const addProductFetch = (data) => {
   return (dispatch) => {
-    fetch("/registration", {
+    fetch("/createProduct", {
       method: "POST",
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((res) => dispatch(addUserAC(res)));
+      .then((res) => dispatch(addAdminAC(res)));
   };
 };
