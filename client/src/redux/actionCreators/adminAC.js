@@ -1,8 +1,8 @@
-import actionTypesAdmin from "../actionType/adminAT";
+import { ADD_PRODUCT } from "../actionType/adminAT";
 
 export const addAdminAC = (payload) => {
   return {
-    type: actionTypesAdmin.ADD,
+    type: ADD_PRODUCT,
     payload,
   };
 };

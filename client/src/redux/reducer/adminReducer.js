@@ -1,11 +1,13 @@
-import actionTypesAdmin from "../actionType/adminAT";
+import { ADD_PRODUCT } from "../actionType/adminAT";
 
-const initialState = { products: [] };
+const initialState = { product: [] };
 
 export const adminReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypesAdmin.ADD:
-      return { ...state, products: [...state.products, action.payload] };
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        product: [...state.product, action.payload]};
     default:
       return state;
   }

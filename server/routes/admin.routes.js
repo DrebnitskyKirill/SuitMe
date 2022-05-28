@@ -1,14 +1,18 @@
 const router = require('express').Router();
-const { Products } = require('../db/models')
-
-router.route('/createProduct')
-.get((req, res) => {
-  Products.findAll()
-    .then((allProducts) => res.json(allProducts))
-    .catch((error) => console.log(error));
+const { Product } = require('../db/models')
+  
+// router.get('/', async (req, res) => {
+//   const allProduct = Product.findAll({
+//     raw: true
+//   })
+//   res.json(allProduct)
+// })
+router.post('/', async (req, res) => {
+  const { id, price, title, amount, name, img } = req.body
+  console.log(req.body);
+   const newProduct = await Product.create(req.body)
+    res.status(201).json(newProduct)
 })
-.post((req, res) => {
-  Products.create(req.body)
-    .then((newProducts) => res.status(201).json(newProducts))
-    .catch((error) => res.status(500).json(error));
-});
+
+
+module.exports = router;

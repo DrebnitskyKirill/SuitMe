@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const config = require('./config');
 const regRouter = require('./routes/reg.routes')
@@ -8,6 +9,6 @@ const PORT = process.env.PORT || 4000;
 
 config(app);
 app.use('/', regRouter)
-app.use('/', adminRoutes)
+app.use('/createProduct', adminRoutes)
 
 app.listen(PORT, () => console.log(`*** Server Start ${PORT} port ***`));
