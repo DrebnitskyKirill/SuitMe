@@ -1,17 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch} from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { addUserFetch } from '../../redux/reduxThunk/userThunk';
 
 function Registration() {
-
+  const navigation = useNavigate()
   const dispatch = useDispatch()
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
-
+  const { register, handleSubmit, formState: { errors, isValid }} = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
   const addUser = (data) => {
-    dispatch(addUserFetch(data));
+    dispatch(addUserFetch(data))
+    navigation('/home')
   };
+
+  // const duplicateEmailsError = useSelector((state) => state.duplicateEmails);
+  // useEffect(() => {
+  //   if (duplicateEmailsError) setError('email', {message: ''});
+  // }, [duplicateEmailsError]);
 
   return (
     <form className="container center" onSubmit={handleSubmit(addUser)}>
