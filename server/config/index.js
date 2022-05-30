@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const { cookiesCleaner, local } = require('../middleware/auth');
+const cors = require('cors')
 
 const sessionConfig = {
   store: new FileStore(),
@@ -24,7 +25,7 @@ const config = (app) => {
   app.use(session(sessionConfig));
   app.use(cookiesCleaner);
   app.use(local);
-
+app.use(cors())
 };
 
 module.exports = config;

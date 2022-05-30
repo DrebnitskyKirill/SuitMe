@@ -8,7 +8,6 @@ const cookiesCleaner = (req, res, next) => {
 
 const sessionChecker = (req, res, next) => {
   if (req.session.user) {
-
   } else {
     next();
   }
