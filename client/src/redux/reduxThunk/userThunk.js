@@ -37,3 +37,4 @@ export const logoutFetch = () => {
       .then(data => dispatch(logoutUserAC(data)))
   }
 };
+
