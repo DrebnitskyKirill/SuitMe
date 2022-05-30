@@ -1,5 +1,6 @@
 import React from 'react';
-import style from '../CardParams/s.module.css'
+import style from './s.module.css'
+
 
 function CardParams(props) {
   const data = {
@@ -10,6 +11,21 @@ function CardParams(props) {
     Sizes: [{ id: 1, name: 'XS' }, { id: 2, name: 'S' }]
   }
   return (
+    <>
+      <div className=''> IMG</div>
+      <div>
+        <p>Grey Suit Vest</p>
+        <div>
+          <h5>1 ВЫБЕРИТЕ ТИП ЗАКАЗА</h5>
+          <button>Arenda</button>
+          <button disabled></button>
+        </div>
+        <div>
+          <h5>1 ВЫБЕРИТЕ ТИП ЗАКАЗА</h5>
+          <button>Добавить в список</button>
+        </div>
+        <div>
+          <h5> Размеры </h5>
     <div className={style.card}>
       <div >
         <div>
@@ -42,12 +58,17 @@ function CardParams(props) {
         </div>
         <div>
           <h6 className={style.h6}> РАЗМЕР </h6>
+
           <p>Воротник 14–20, рукав 31–39 (только нечетные размеры). Узкая или классическая посадка.
             Наша викторина Fit Finder поможет вам найти правильные размеры до оформления заказа.
           </p>
         </div>
         <div>
+
+          <h5>ПОДРОБНОСТИ</h5>
+
           <h6 className={style.h6}>ПОДРОБНОСТИ</h6>
+
           <p>
             Все начинается с накрахмаленной белой классической рубашки. Идеальная основа, ее можно легко одеть
             или одеть в зависимости от вашего мероприятия, возможности безграничны.
@@ -57,7 +78,10 @@ function CardParams(props) {
           </p>
         </div>
       </div>
-      </div>
+</div>
+    </>
+
+
   );
 }
 

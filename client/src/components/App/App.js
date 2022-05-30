@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Home from "../Home/Home";
 import Logout from "../Logout/Logout";
@@ -10,6 +11,7 @@ import Admin from "../Admin/Admin";
 import { Provider } from "react-redux";
 import CollectionPage from "../CollectionPage/CollectionPage";
 import store from "../../redux/store";
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
             <Route path="/collection/:id" element={<CollectionPage />} />
           </Routes>
         </BrowserRouter>
+
     </>
   );
 }

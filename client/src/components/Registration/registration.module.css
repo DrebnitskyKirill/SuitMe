@@ -1,0 +1,17 @@
+.registration{
+  height: 500px;
+}
+input{
+  width: 300px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+.button{
+  color: white;
+  background-color: #009688;
+  width: 308px;
+  height: 60px;
+}
+.go{
+  display: flex;
+}

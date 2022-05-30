@@ -24,7 +24,6 @@ export const logUserFetch = (data) => {
       .then(res => res.json())
       .then(res => dispatch(logUserAC(res)))
   }
-
 };
 
 export const logoutFetch = () => {
