@@ -5,7 +5,7 @@ import Registration from '../Registration/Registration';
 import Navbar from '../Navbar/Navbar';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Login from '../Login/Login';
-import Collection from '../../Collection/Collection';
+import CollectionPage from '../CollectionPage/CollectionPage';
 // import Logout from '../Logout/Logout';
 
 
@@ -18,7 +18,8 @@ function App() {
           <Route path='/registration' element={<Registration />} />
           <Route path='/login' element={<Login />} />
           {/* <Route path='/registration' element={<Logout />} /> */}
-          <Route path='/collection' element={ <Collection/> }/>
+          <Route path='/collection' element={ <CollectionPage/> }/>
+          <Route path='/collection/:id' element={ <CollectionPage/> }/>
         </Routes>
       </BrowserRouter>
    </>
