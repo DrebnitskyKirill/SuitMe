@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './home.module.css'
-import foto from '../../img/Home.jpg'
+import foto from '../img/Home.jpg'
 import Steps from './Steps';
 import FirstThings from './FirstThings';
 
