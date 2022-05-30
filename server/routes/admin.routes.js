@@ -12,3 +12,5 @@ router.route('/createProduct')
     .then((newProducts) => res.status(201).json(newProducts))
     .catch((error) => res.status(500).json(error));
 });
+
+module.exports = router;

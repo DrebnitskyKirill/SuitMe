@@ -1,16 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { addUserFetch } from '../../redux/reduxThunk/userThunk';
 
 function Registration() {
-
+  const navigation = useNavigate()
   const dispatch = useDispatch()
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
-
-  const addUser = async (data) => {
-    dispatch(addUserFetch(data));
+  const { register, handleSubmit, formState: { errors, isValid }} = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
+  const addUser = (data) => {
+    dispatch(addUserFetch(data))
+    navigation('/home')
   };
+
+  // const duplicateEmailsError = useSelector((state) => state.duplicateEmails);
+  // useEffect(() => {
+  //   if (duplicateEmailsError) setError('email', {message: ''});
+  // }, [duplicateEmailsError]);
 
   return (
     <form className="container center" onSubmit={handleSubmit(addUser)}>
@@ -23,7 +29,7 @@ function Registration() {
       </div>
       <div className="container">
         <div className="container">
-          <input {...register("email", { required: 'Необходимо указать Email', pattern: {value:  /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$/, message: 'Необходимо указать @' } })} className="validate center" placeholder='Введите Email' />
+          <input {...register("email", { required: 'Необходимо указать Email', pattern: {value:  /^([^ ]+@[^ ]+\.[a-z]{2,6}|)$/, message: 'Необходимо указать @' } })} className="validate center" placeholder='Введите Email' />
           <div>{errors?.email && <p>{errors?.email?.message}</p>}</div>
         </div>
         <div className="container">
@@ -31,6 +37,7 @@ function Registration() {
             <input {...register("password", { required: 'Поле обязательно к заполнению', minLength: { value: 5, message: 'Пароль должен быть не менее 5 символов' } })} type="password" className="validate center" placeholder='Введите пароль' />
             <div>{errors?.password && <p>{errors?.password?.message}</p>}</div>
           </div>
+          <p className='center'>Если Вы зарегистрированы, перейдите<Link to='/login'> Login</Link> </p>
           <button id='btn-reg' type='submit' className='waves-effect waves-light btn-large brown lighten-2' disabled={!isValid}>Зарегистрироваться</button>
         </div>
       </div>
