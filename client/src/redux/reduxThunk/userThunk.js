@@ -24,12 +24,11 @@ export const logUserFetch = (data) => {
       .then(res => res.json())
       .then(res => dispatch(logUserAC(res)))
   }
-
 };
 
 export const logoutFetch = () => {
   return (dispatch) => {
-    fetch('/log',{
+    fetch('/logout',{
       method:'POST',
       headers: { "Content-Type": "Application/json" },
     })
@@ -37,3 +36,4 @@ export const logoutFetch = () => {
       .then(data => dispatch(logoutUserAC(data)))
   }
 };
+

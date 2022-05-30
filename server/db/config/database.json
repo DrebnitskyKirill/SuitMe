@@ -1,6 +1,6 @@
 {
   "development": {
-<<<<<<< HEAD
+
     "use_env_variable": "DATABASE_URL"
   },
   "production": {
@@ -12,26 +12,4 @@
     }
   }
  }
-=======
-    "username": "postgres",
-    "password": "postgres",
-    "database": "suit",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}
->>>>>>> c9454d144220a7736ac23bd769786cc46e634aa1
+

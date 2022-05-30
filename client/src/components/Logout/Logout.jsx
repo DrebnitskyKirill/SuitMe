@@ -8,7 +8,7 @@ function Logout() {
   const nav = useNavigate()
   useEffect(() => {
     dispatch(logoutFetch())
-  }, [ ])
+  }, [dispatch])
   return (
     <>
     lllllll

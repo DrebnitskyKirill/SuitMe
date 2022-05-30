@@ -16,6 +16,10 @@ module.exports = {
           key: 'id',
         }
       },
+      amount: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       price: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -24,15 +28,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      amount: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
       name: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      img: {
         type: Sequelize.TEXT,
         allowNull: false,
       },

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import {  useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 import Modal from '../Modal/Modal';
 import style from './navbar.module.css'
 
 function Navbar() {
+
   const [modal, setModal] = useState(false)
+  const { user } = useSelector(store => store.user)
   return (
     <>
     <nav>
