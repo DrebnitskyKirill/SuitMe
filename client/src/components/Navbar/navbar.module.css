@@ -1,0 +1,31 @@
+.nav{
+  background-color: black;
+  display: flex;
+  justify-content:space-between;
+  height: 72px;
+ 
+}
+.navLi{
+  display: flex;
+}
+.logo{
+  background-color: white;
+  color: black;
+  text-align: center;
+  width: 100px;
+}
+li{
+  list-style-type: none;
+  padding-left: 10px;
+  padding-right:10px;
+  display: flex;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+  color: white; 
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
