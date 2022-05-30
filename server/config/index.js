@@ -25,7 +25,8 @@ const config = (app) => {
   app.use(session(sessionConfig));
   app.use(cookiesCleaner);
   app.use(local);
-app.use(cors())
+  app.use(cors())
+
 };
 
 module.exports = config;

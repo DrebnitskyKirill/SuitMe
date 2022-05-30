@@ -9,17 +9,20 @@ const saltRounds = 7;
 router.route('/registration')
   .post(async (req, res) => {
     const {
-      email, password,
+      email, 
+      password, 
     } = req.body;
     const thisUser = await User.findOne({ where: { email } });
+
     if (thisUser) {
-      res.status(404).json({
-        error: 'Такой пользователь уже существует',
-      });
+      
+      res.json({message: 'Такой пользователь уже существует'})
+      
     } else {
       const newUser = await User.create({
         email,
         password: (await bcrypt.hash(password, saltRounds)),
+        isAdmin: false,
       });
       req.session.user = newUser;
       req.session.uid = newUser.id;

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { logoutFetch } from '../../redux/reduxThunk/userThunk';
 
-function Logout(props) {
+function Logout() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(logoutFetch())
+  }, [dispatch])
   return (
-    <div>
-      Logout
-    </div>
+    <>
+    lllllll
+    </>
   );
 }
 
