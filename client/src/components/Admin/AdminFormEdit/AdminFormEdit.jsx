@@ -1,41 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { addProductFetch } from "../../../redux/reduxThunk/adminThunk";
-import AdminProductCard from "../AdminProductCard/AdminProductCard";
-import AdminSearch from "../AdminSearch/AdminSearch";
-import "./AdminForm.css";
+import { editProductFetch } from "../../../redux/reduxThunk/adminThunk";
 
 export default function AdminForm() {
-  const { size, color } = useSelector((store) => store.admin);
-  const [state, setState] = useState([]);
-  console.log(state);
+  const { product, size, color } = useSelector((store) => store.admin);
   const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
   } = useForm({ mode: "onBlur" });
-
-  const addProduct = (data) => {
-      
-    dispatch(addProductFetch(data));
+  
+  const editProduct = (data) => {
+    dispatch(editProductFetch({...data, id: product.id}));
   };
-
   return (
     <>
-      <form className="container center" onSubmit={handleSubmit(addProduct)}>
-        <div className="container">
-          <div className="container">
-            <select {...register("category_id")}>
-              <option disabled default>Категория</option>
-              <option value="1">Ботинки</option>
-              <option value="2">Рубашки</option>
-              <option value="3">Костюмы</option>
-            </select>
-          </div>
-        </div>
-        <div className="container">
+      <form className="container center" onSubmit={handleSubmit(editProduct)}>
+      <div className="container">
           <div className="container">
             <input
               {...register("name", { required: "Необходимо указать название" })}
@@ -77,7 +60,7 @@ export default function AdminForm() {
         <br />
         <div className="container">
           <div className="container">
-            <select {...register('size')}>
+            <select>
               {size.map((el) => (
                 <option key={el.id} value={el.id}>
                   {el.name}
@@ -89,7 +72,7 @@ export default function AdminForm() {
         <br />
         <div className="container">
           <div className="container">
-            <select {...register('color')}>
+            <select>
               {color.map((el) => (
                 <option key={el.id} value={el.id}>
                   {el.name}
@@ -142,20 +125,9 @@ export default function AdminForm() {
           </div>
         </div>
         <button type="submit" className="btn btn-success" disabled={!isValid}>
-          Добавить
+          Сохранить
         </button>
       </form>
-      <div className="container">
-        <div className="container">
-          <br />
-          <AdminSearch />
-        </div>
-      </div>
-      <div className="container">
-        <div className="container">
-          <AdminProductCard />
-        </div>
-      </div>
     </>
   );
 }
