@@ -7,7 +7,7 @@ import Navbar from '../Navbar/Navbar';
 import Login from '../Login/Login';
 import Home from '../Home/Home';
 import Logout from '../Logout/Logout';
-import CardProduct from '../CardProduct/CardProduct';
+import CardParams from '../CardParams/CardParams';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Route path='/registration' element={<Registration />} />
           <Route path='/login' element={<Login />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/cardproduct' element={<CardProduct />} />
+          <Route path='/cardproduct' element={<CardParams />} />
           <Route path='/logout' element={<Logout />} />
         </Routes>
       </BrowserRouter>

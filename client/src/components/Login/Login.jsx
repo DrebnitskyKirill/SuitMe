@@ -1,12 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { logUserFetch } from '../../redux/reduxThunk/userThunk';
 
 function Login() {
   const dispatch = useDispatch()
-  const navigation = useNavigate()
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
 
   const loginUser = (data) => {
