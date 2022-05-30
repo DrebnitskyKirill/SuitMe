@@ -11,3 +11,4 @@ export const addUserFetch = (data) => {
       .then((res) => dispatch(addUserAC(res)));
   };
 };
+
