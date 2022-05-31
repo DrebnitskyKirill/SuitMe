@@ -1,7 +1,13 @@
-import { addAdminAC, initColorAC } from "../actionCreators/adminAC";
-import { searchProductAC } from "../actionCreators/adminAC";
-import { editProductAC } from "../actionCreators/adminAC";
-import { initSizeAC } from "../actionCreators/adminAC";
+import {
+  addAdminAC,
+  addPhotoAC,
+  initActivityAC,
+  initColorAC,
+  searchProductAC,
+  editProductAC,
+  initSizeAC,
+  editPhotoAC,
+} from "../actionCreators/adminAC";
 
 export const addProductFetch = (payload) => {
   return (dispatch) => {
@@ -51,5 +57,32 @@ export const initColorFetch = () => {
     fetch("/createProduct/allColor")
       .then((res) => res.json())
       .then((data) => dispatch(initColorAC(data)));
+  };
+};
+export const initActivityFetch = () => {
+  return (dispatch) => {
+    fetch("/createProduct/allActivity")
+      .then((res) => res.json())
+      .then((data) => dispatch(initActivityAC(data)));
+  };
+};
+export const addPhotoFetch = (payload) => {
+  return (dispatch) => {
+    fetch("/createProduct/photo", {
+      method: "POST",
+      body: payload,
+    })
+      .then((res) => res.json())
+      .then((data) => dispatch(addPhotoAC(data)));
+  };
+};
+export const editPhotoFetch = (payload) => {
+  return (dispatch) => {
+    fetch("/editProduct/photo", {
+      method: "PUT",
+      body: payload,
+    })
+      .then((res) => res.json())
+      .then((data) => dispatch(editPhotoAC(data)));
   };
 };

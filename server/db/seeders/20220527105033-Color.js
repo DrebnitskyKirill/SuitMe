@@ -5,22 +5,27 @@ module.exports = {
 
     await queryInterface.bulkInsert('Colors', [
       {
-        name: 'red',
+        name: 'Red',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        name: 'black',
+        name: 'Midnight Blue',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        name: 'green',
+        name: 'Black',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        name: 'grey',
+        name: 'Green',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: 'Grey',
         createdAt: new Date(),
         updatedAt: new Date(),
       },

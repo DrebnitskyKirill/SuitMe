@@ -7,18 +7,21 @@ module.exports = {
       {
         product_id: 1,
         size_id: 1,
+        amount: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         product_id: 2,
         size_id: 2,
+        amount: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         product_id: 1,
         size_id: 2,
+        amount: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

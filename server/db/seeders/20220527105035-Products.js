@@ -10,7 +10,6 @@ module.exports = {
           price: 2000,
           title: "Самая лучшая рубашка",
           name: "Белая рубашка",
-          amount: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -19,7 +18,7 @@ module.exports = {
           price: 1000,
           title: "Не самая лучшая рубашка",
           name: "Синяя рубашка",
-          amount: 2,
+
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -28,7 +27,7 @@ module.exports = {
           price: 6666,
           title: "Педали твоего дедушки",
           name: "Ботинки черные",
-          amount: 4,
+          
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -37,7 +36,7 @@ module.exports = {
           price: 45000,
           title: "Смокинг на похороны",
           name: "Смокинг черный",
-          amount: 1,
+          
           createdAt: new Date(),
           updatedAt: new Date(),
         },
