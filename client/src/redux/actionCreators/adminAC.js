@@ -3,7 +3,10 @@ import {
   EDIT_PRODUCT,
   SEARCH_PRODUCT,
   INIT_SIZE,
-  INIT_COLOR
+  INIT_COLOR,
+  ADD_PHOTO,
+  INIT_ACTIVITY,
+  EDIT_PHOTO,
 } from "../actionType/adminAT";
 
 export const addAdminAC = (payload) => {
@@ -33,6 +36,24 @@ export const initSizeAC = (payload) => {
 export const initColorAC = (payload) => {
   return {
     type: INIT_COLOR,
+    payload,
+  };
+};
+export const initActivityAC = (payload) => {
+  return {
+    type: INIT_ACTIVITY,
+    payload,
+  };
+};
+export const addPhotoAC = (payload) => {
+  return {
+    type: ADD_PHOTO,
+    payload,
+  };
+};
+export const editPhotoAC = (payload) => {
+  return {
+    type: EDIT_PHOTO,
     payload,
   };
 };

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProductFetch } from "../../../redux/reduxThunk/adminThunk";
+import style from './AdminSearch.module.css'
 
 export default function AdminSearch() {
   const dispatch = useDispatch();
@@ -9,22 +10,22 @@ export default function AdminSearch() {
     const value = e.target.input.value;
     dispatch(searchProductFetch({name: value}));
   };
-  
-
   return (
-    <>
-      <form onSubmit={dataSearch} className='container center'>
-        <div className="searchbar">
+    <div>
+      <p className={style.name}>Форма для изменения товара</p>
+      <form onSubmit={dataSearch} className=''>
+        <div className="">
+        <label>Укажите наименование товара:</label>
           <input
             id="input"
             type="text"
-            className="form-control"
+            className=""
             placeholder="Поиск товара..."
           />
-          <button type="submit" className="btn btn-success">Поиск</button>
+          <button type="submit" className={style.buttonForm}>Поиск</button>
         </div>
       </form>
       
-    </>
+    </div>
   );
 }

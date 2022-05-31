@@ -1,7 +1,7 @@
 import React from 'react';
 import i1 from '../img/бабочка.png'
-import i3 from '..//img/formal.png'
-import i2 from '..//img/рулетка.png'
+import i3 from '../img/formal.png'
+import i2 from '../img/рулетка.png'
 import style from './home.module.css'
 
 function Steps() {

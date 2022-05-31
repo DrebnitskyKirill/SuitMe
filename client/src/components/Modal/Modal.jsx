@@ -5,7 +5,6 @@ import  './modal.css'
 
 function Modal ({isOpen, closeModal}) {
   const [choice,setChoice]=useState(1)
-  console.log(isOpen)
   return (
     <div className={`modal_wrapper ${isOpen ? 'sopen' : 'close'}`}>
     <div className='modal_body'>
