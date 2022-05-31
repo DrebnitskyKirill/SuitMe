@@ -3,19 +3,11 @@ import { useSelector } from 'react-redux';
 import Product from '../Product/Product';
 
 function Collection({ typeOfProduct }) {
-  const items = useSelector(store => {
-    if (typeOfProduct) {
-      return store.products[typeOfProduct]
-    } else {
-      const preResult = Object.values(store.products)
-      const result = preResult.flat(Infinity)
-      return result
-    }
-  })
+  const { allProducts } = useSelector(store => store.products)
 
   return (
     <div>
-      {items ? items.map((el) => <Product key={el.id} item={el} />) : <div>No products avaible</div>}
+      {allProducts ? allProducts.map((el) => <Product key={el.id} item={el} />) : <div>No products avaible</div>}
     </div>
   );
 }

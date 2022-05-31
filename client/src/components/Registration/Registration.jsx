@@ -15,7 +15,6 @@ function Registration({open}) {
 
   return (
     <form  onSubmit={handleSubmit(addUser)}>
-      <p> Зарегистрируйтесь, чтобы начать</p>
      <div className={style.registration}>
         <div>
           <input {...register("name", { required: 'Необходимо указать ваше Имя' })} placeholder="Введите Имя" type="text" className="validate center" required />
@@ -31,9 +30,9 @@ function Registration({open}) {
             <div>{errors?.password && <p>{errors?.password?.message}</p>}</div>
           </div>
           <button id='btn-reg' type='submit' className={style.button} disabled={!isValid}>Зарегистрироваться</button>
-          <div className={style.go}><h5>У вас уже есть аккаунт?</h5><h5 onClick={open} style={{'color':'blue'}}>Авторизоваться</h5></div>
+          
           </div>
-         
+          <div className={style.go}><h4>У вас уже есть аккаунт?</h4><h4 onClick={open} style={{'color':'blue'}}>Авторизуйтесь</h4></div>
     </form>
   );
 }

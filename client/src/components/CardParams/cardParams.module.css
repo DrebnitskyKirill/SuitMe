@@ -1,0 +1,43 @@
+.card{
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin-top: 20px;
+}
+.checkButton{
+  width: 400px;
+  height: 70px;
+  background-image: none; 
+  background: transparent;
+  float: left;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+.imgDiv{
+  height: 800px;
+  width: 529px;
+  display: flex; 
+  text-align: center;
+}
+.text{
+  text-align: justify;
+}
+.discrabeDiv{
+  height: 800px;
+  width: 400px;
+  text-align: center;
+  margin-left: 10px;
+}
+.rendButton {
+  color: white;
+  background-color: #009688;
+  width: 400px;
+  height: 60px;
+}
+.h5{
+  font-weight: bolder;
+  text-align: left;
+}
+.label:checked+label{
+background-color: #009688;
+}

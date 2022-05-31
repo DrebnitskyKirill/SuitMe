@@ -7,11 +7,7 @@ import SearchNav from '../SearchNav/SearchNav'
 
 function CollectionPage(props) {
   const { id } = useParams()
-  const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(showProductsFetch());
-  }, [])
   return (
     <>
       <SearchNav />
