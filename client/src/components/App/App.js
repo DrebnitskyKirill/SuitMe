@@ -8,12 +8,19 @@ import Navbar from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../Login/Login";
 import Admin from "../Admin/Admin";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import CollectionPage from "../CollectionPage/CollectionPage";
 import store from "../../redux/store";
+import { showProductsFetch } from "../../redux/reduxThunk/productsThunk";
+import { useEffect } from "react";
 
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(showProductsFetch());
+  }, [dispatch])
   return (
     <>
         <BrowserRouter>

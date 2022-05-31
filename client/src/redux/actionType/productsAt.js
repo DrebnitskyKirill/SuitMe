@@ -1,1 +1,1 @@
-export const INIT_PRODUCTS = 'INIT_PRODUCTS'
+export const INIT_PRODUCTS = 'INIT_PRODUCTS';

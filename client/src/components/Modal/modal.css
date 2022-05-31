@@ -18,8 +18,8 @@
   display: none;
 }
 .modal_body{
-  width: 25vw;
-  height: 50vh;
+  width: 30vw;
+  height: 70vh;
   background-color: white;
   display: flex;
   flex-direction: column;

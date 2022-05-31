@@ -1,13 +1,12 @@
 import { INIT_PRODUCTS } from '../actionType/productsAt';
 
-const initialState = { suits: [], shoes: [], shirts: [] }
+const initialState = { allProducts: [], suits: [], shoes: [], shirts: [] }
 
 export const productsReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case INIT_PRODUCTS:
-      state = action.payload;
-      return state
+     return {...state, allProducts:[action.payload.suits, action.payload.shoes, action.payload.shirts ].flat(Infinity)}
 
     default:
       return state
