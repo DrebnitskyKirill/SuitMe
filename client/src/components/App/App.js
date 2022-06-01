@@ -13,6 +13,7 @@ import CollectionPage from "../CollectionPage/CollectionPage";
 import store from "../../redux/store";
 import { showProductsFetch } from "../../redux/reduxThunk/productsThunk";
 import { useEffect } from "react";
+import Basket from "../Basket/Basket";
 
 
 function App() {
@@ -26,14 +27,15 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/collection" element={<CollectionPage />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/cardproduct" element={<CardParams />} />
+            <Route path="/cardproduct/:id" element={<CardParams />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/collection/:id" element={<CollectionPage />} />
+            <Route path="/basket" element={<Basket/>} />
           </Routes>
         </BrowserRouter>
 
