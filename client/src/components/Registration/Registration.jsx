@@ -22,7 +22,7 @@ function Registration({open}) {
         </div>
     
         <div>
-          <input {...register("email", { required: 'Необходимо указать Email', pattern: {value:  /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$/, message: 'Необходимо указать @' } })} className="validate center" placeholder='Введите Email' />
+          <input {...register("email", { required: 'Необходимо указать Email', pattern: {value:  "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", message: 'Необходимо указать @' } })} className="validate center" placeholder='Введите Email' />
           <div>{errors?.email && <p>{errors?.email?.message}</p>}</div>
         </div>
           <div>
