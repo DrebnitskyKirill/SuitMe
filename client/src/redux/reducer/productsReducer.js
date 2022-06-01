@@ -1,27 +1,15 @@
-import { INIT_ORDER, INIT_PRODUCTS } from "../actionType/productsAt";
+import { INIT_PRODUCTS } from '../actionType/productsAt';
 
-const initialState = {
-  allProducts: [],
-  suits: [],
-  shoes: [],
-  shirts: [],
-  orders: [],
-};
+const initialState = { allProducts: [],categories:[]}
 
 export const productsReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case INIT_PRODUCTS:
-      return {
-        ...state,
-        allProducts: [
-          action.payload.suits,
-          action.payload.shoes,
-          action.payload.shirts,
-        ].flat(Infinity),
-      };
-    case INIT_ORDER:
-      return { ...state, orders: action.payload.allOrders };
+     return {...state, allProducts:action.payload.allProducts, categories:action.payload.categories}
+
+     
     default:
-      return state;
+      return state
   }
-};
+}

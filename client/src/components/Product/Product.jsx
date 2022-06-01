@@ -1,21 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import style from './Product.module.css'
 
 function Product({ item }) {
   const navigate = useNavigate()
 
   return (
-    <div className="row" onClick={()=> navigate(`/cardProduct/${item.id}`)}>
-      <div className="col s12 m6">
-        <div className="card">
-          <div className="card-image">
-            <img src={item.img} alt='img'/>
-          </div>
-          <div className="card-content">
-            <p>{item.name}</p>
-          </div>
-        </div>
+    <div onClick={()=> navigate(`/cardProduct/${item.id}`)} className={style.card}>
+      <div className={style.blocImg}>
+        <img src={`http://localhost:4000${item.Imgs[0].name}`} alt='img' className={style.img}/>
       </div>
+      <h3 className={style.textName}>{item.name}</h3>
+      <h3 className={style.textName}>Аренда: {item.price}p</h3>
     </div>
   );
 }

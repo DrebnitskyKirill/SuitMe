@@ -1,6 +1,6 @@
 import { INIT_ORDER, INIT_PRODUCTS } from '../actionType/productsAt';
 
-export const addProductsAc = (payload) => {
+export const initProductsAC = (payload) => {
   return {
     type: INIT_PRODUCTS,
     payload,
