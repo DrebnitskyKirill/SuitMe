@@ -30,7 +30,6 @@ export default function AdminForm() {
       dispatch(addPhotoFetch(data));
     } catch (error) {}
   };
-
   const addProduct = (data) => {
     dispatch(addProductFetch({ ...data, photo, size: state }));
   };
