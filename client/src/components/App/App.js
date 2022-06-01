@@ -8,12 +8,11 @@ import Navbar from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../Login/Login";
 import Admin from "../Admin/Admin";
-import { Provider, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import CollectionPage from "../CollectionPage/CollectionPage";
-import store from "../../redux/store";
 import { showProductsFetch } from "../../redux/reduxThunk/productsThunk";
 import { useEffect } from "react";
-import Basket from "../Basket/Basket";
+import Order from "../Order/Order";
 
 
 function App() {
@@ -35,7 +34,7 @@ function App() {
             <Route path="/cardproduct/:id" element={<CardParams />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/collection/:id" element={<CollectionPage />} />
-            <Route path="/basket" element={<Basket/>} />
+            <Route path="/order" element={<Order />} />
           </Routes>
         </BrowserRouter>
 

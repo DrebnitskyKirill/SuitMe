@@ -12,9 +12,9 @@ function Navbar() {
     <>
     <nav>
       <div className={style.nav}>
-        <Link to="/" className={style.logo}>MIB</Link>
+        <Link to="/" className={style.logo}><h3>MIB</h3></Link>
         <ul  className={style.navLi}>
-          <li><a onClick={()=> setModal(true)}>Login</a></li>
+          <li><a onClick={()=> setModal(true)}>Начать</a></li>
         </ul>
       </div>
     </nav>

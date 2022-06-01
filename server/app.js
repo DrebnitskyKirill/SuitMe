@@ -1,6 +1,3 @@
-
-
-
 require("dotenv").config();
 const express = require("express");
 const config = require("./config");
@@ -12,6 +9,7 @@ const searchRoutes = require("./routes/admin/search.routes");
 const editRouter = require("./routes/admin/admin.editCard.routes");
 const allProductsRouter = require('./routes/allProducts.routes')
 const suitsRouter = require('./routes/suits.routes')
+const orderRouter = require('./routes/order.routes')
 
 
 const app = express();
@@ -21,12 +19,14 @@ config(app);
 
 app.use('/', logRouter);
 app.use('/', logoutRouter)
-app.use("/", regRouter);
+app.use('/', regRouter);
 app.use('/', suitsRouter)
 app.use('/', allProductsRouter)
-app.use("/createProduct", adminRoutes);
-app.use("/searchProduct", searchRoutes);
-app.use("/editProduct", editRouter);
+app.use('/', orderRouter);
+app.use('/createProduct', adminRoutes);
+app.use('/searchProduct', searchRoutes);
+app.use('/editProduct', editRouter);
+
 
 
 

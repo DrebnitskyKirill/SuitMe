@@ -27,29 +27,27 @@ function CardParams() {
         </div>
         <div className={style.discrabeDiv}>
           <div className={style.text}>
-            <p>{dataProduct[0].name}</p>
+            <h4 className={style.pTitle}>{dataProduct[0].name}</h4>
             <div className={style.line}></div>
             <div >
-              <h4>❶ ВЫБЕРИТЕ ТИП ЗАКАЗА</h4>
-              <button className={style.checkButton}>Арендовать {dataProduct[0].price} ₽</button>
-              <button className={style.checkButton} disabled> Купить 'Скоро будет доступно'</button>
+              <h4>Арендовать от:   {dataProduct[0].price} ₽</h4>
             </div>
             <div>
-              <h4 className={style.h4}>ОПИСАНИЕ ТОВАРА</h4>
+              <h4>Описание товара: </h4>
               <p className={style.title}> {dataProduct[0].title}
               </p>
             </div>
             <div className={style.line}></div>
             <div>
-              <h4 className={style.h4}> МЕРОПРИЯТИЕ </h4>
-              <p> {dataProduct[0].Activities[0].name} </p> 
+              <h4> Мероприятие : {dataProduct[0].Activities[0].name} </h4>
+            </div>
+            <div>
+              <h4> Цвет : {dataProduct[0].Colors[0].name} </h4>
+            </div>
+            <div>
+              <h4> Выберите размер: { dataProduct[0].Sizes.map((el) => <button >{el.name}</button>)} </h4>
             </div>
             <div className={style.line}></div>
-            <div>
-              <h4 className={style.h4}> ХАРАКТЕРИСТИКА </h4>
-              <p> Размер - { dataProduct[0].Sizes.map((el) => <button >{el.name}</button>)} </p>
-              <p> Цвет -  {dataProduct[0].Colors[0].name} </p>
-            </div>
             <div>
               <button className={style.rendButton}>Добавить в корзину</button>
             </div>
