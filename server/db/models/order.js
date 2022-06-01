@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     status: {
@@ -36,11 +36,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     start_rent: {
-      type: DataTypes.TEXT,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     end_rent: {
-      type: DataTypes.TEXT,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
   }, {
