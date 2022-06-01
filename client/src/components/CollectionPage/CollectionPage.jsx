@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import Collection from '../Collection/Collection';
 import SearchNav from '../SearchNav/SearchNav'
 
-function CollectionPage(props) {
-  const { id } = useParams()
+function CollectionPage() {
+  const { name } = useParams()
 
   return (
     <>
       <SearchNav />
-      <Collection typeOfProduct={id} />
+      <Collection name={name} />
     </>
   );
 }

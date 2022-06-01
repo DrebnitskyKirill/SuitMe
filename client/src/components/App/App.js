@@ -7,18 +7,19 @@ import Navbar from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../Login/Login";
 import Admin from "../Admin/Admin";
+import Cart from "../Cart/Cart";
 import { useDispatch } from "react-redux";
 import CollectionPage from "../CollectionPage/CollectionPage";
 import {
+  initProductsFetch,
   showOrdersFetch,
-  showProductsFetch,
 } from "../../redux/reduxThunk/productsThunk";
 import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(showProductsFetch());
+    dispatch(initProductsFetch());
     dispatch(showOrdersFetch());
   }, [dispatch]);
   return (
@@ -33,7 +34,8 @@ function App() {
           <Route path="/collection" element={<CollectionPage />} />
           <Route path="/cardproduct/:id" element={<CardParams />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/collection/:id" element={<CollectionPage />} />
+          <Route path="/collection/:name" element={<CollectionPage />} />
+          <Route path="/cart" element={<Cart/>} />
         </Routes>
       </BrowserRouter>
     </>
