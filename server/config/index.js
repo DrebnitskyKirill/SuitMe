@@ -28,7 +28,7 @@ const config = (app) => {
   app.use(cookiesCleaner);
   app.use(local);
   app.use(cors());
-  app.use(express.static(path.join(__dirname, "images")));
+  app.use(express.static(path.join(__dirname, "../images")));
   app.use(fileUpload());
 };
 

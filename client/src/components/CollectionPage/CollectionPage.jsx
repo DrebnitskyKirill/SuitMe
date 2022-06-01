@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { showProductsFetch } from '../../redux/reduxThunk/productsThunk';
 import Collection from '../Collection/Collection';
 import SearchNav from '../SearchNav/SearchNav'
 

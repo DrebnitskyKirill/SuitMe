@@ -34,10 +34,19 @@
   width: 400px;
   height: 60px;
 }
-.h5{
+.h4{
   font-weight: bolder;
   text-align: left;
 }
 .label:checked+label{
 background-color: #009688;
 }
+
+.title{
+  text-align: justify;
+}
+
+.line {
+  margin-top: 20px;
+  border-bottom: 1px solid black; 
+ }
