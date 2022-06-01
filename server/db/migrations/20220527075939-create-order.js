@@ -25,7 +25,7 @@ module.exports = {
         allowNull: false,
       },
       phone: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       status: {
@@ -33,11 +33,11 @@ module.exports = {
         allowNull: false,
       },
       start_rent: {
-        type: Sequelize.TEXT,
+        type: Sequelize.DATEONLY,
         allowNull: false,
       },
       end_rent: {
-        type: Sequelize.TEXT,
+        type: Sequelize.DATEONLY,
         allowNull: false,
       },
       createdAt: {

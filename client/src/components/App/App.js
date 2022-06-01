@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Home from "../Home/Home";
 import Logout from "../Logout/Logout";
@@ -10,17 +9,23 @@ import Login from "../Login/Login";
 import Admin from "../Admin/Admin";
 import { useDispatch } from "react-redux";
 import CollectionPage from "../CollectionPage/CollectionPage";
+import {
+  initProductsFetch,
+  showOrdersFetch,
+} from "../../redux/reduxThunk/productsThunk";
 import { showProductsFetch } from "../../redux/reduxThunk/productsThunk";
 import { useEffect } from "react";
 import Order from "../Order/Order";
+import Cart from "../Cart/Cart";
+import { useDispatch } from "react-redux";
 
 
 function App() {
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(showProductsFetch());
-  }, [dispatch])
+    dispatch(initProductsFetch());
+    dispatch(showOrdersFetch());
+  }, [dispatch]);
   return (
     <>
         <BrowserRouter>
@@ -34,10 +39,10 @@ function App() {
             <Route path="/cardproduct/:id" element={<CardParams />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/collection/:id" element={<CollectionPage />} />
+              <Route path="/cart" element={<Cart/>} />
             <Route path="/order" element={<Order />} />
           </Routes>
         </BrowserRouter>
-
     </>
   );
 }

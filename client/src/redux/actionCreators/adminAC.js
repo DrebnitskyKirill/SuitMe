@@ -7,6 +7,7 @@ import {
   ADD_PHOTO,
   INIT_ACTIVITY,
   EDIT_PHOTO,
+ 
 } from "../actionType/adminAT";
 
 export const addAdminAC = (payload) => {
@@ -57,3 +58,4 @@ export const editPhotoAC = (payload) => {
     payload,
   };
 };
+
