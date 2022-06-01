@@ -3,9 +3,9 @@ import {
   addPhotoAC,
   initActivityAC,
   initColorAC,
+  initSizeAC,
   searchProductAC,
   editProductAC,
-  initSizeAC,
   editPhotoAC,
 } from "../actionCreators/adminAC";
 

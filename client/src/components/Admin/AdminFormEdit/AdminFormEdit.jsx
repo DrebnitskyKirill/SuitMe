@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { editPhotoFetch, editProductFetch } from "../../../redux/reduxThunk/adminThunk";
+import {
+  editPhotoFetch,
+  editProductFetch,
+} from "../../../redux/reduxThunk/adminThunk";
 import style from "./AdminFormEdit.module.css";
-export default function AdminForm() {
-  const { product, size, color, activity } = useSelector((store) => store.admin);
+
+export default function AdminFormEdit() {
+  const { product, size, color, photo, activity } = useSelector(
+    (store) => store.admin
+  );
   const dispatch = useDispatch();
+  console.log(photo);
+  const [state, setState] = useState([]);
+  const sizeValue = (e) => {
+    setState((prev) => [...prev, e.target.value]);
+  };
   const {
     register,
     handleSubmit,
@@ -18,13 +29,13 @@ export default function AdminForm() {
       picturesData.forEach((img) => {
         data.append("homesImg", img);
       });
-      dispatch(editPhotoFetch({...data, id: product.id}));
+      dispatch(editPhotoFetch(data));
     } catch (error) {}
   };
-
+console.log(state);
   const editProduct = (data) => {
     console.log(data);
-    dispatch(editProductFetch({ ...data, id: product.id }));
+    dispatch(editProductFetch({ ...data, photo, id: product.id, size: state }));
   };
   return (
     <>
@@ -85,7 +96,7 @@ export default function AdminForm() {
         </div>
         <div className="container">
           <div className="container">
-          <input
+            <input
               type="file"
               multiple
               onChange={sendFilesEdit}
@@ -98,7 +109,7 @@ export default function AdminForm() {
         <div className="container">
           <div className="container">
             <label>Изменить размер товара:</label>
-            <select {...register("size")}>
+            <select onClick={sizeValue} {...register("size")}>
               {size.map((el) => (
                 <option key={el.id} value={el.id}>
                   {el.name}
