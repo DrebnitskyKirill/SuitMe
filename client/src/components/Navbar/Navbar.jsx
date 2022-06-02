@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
 import style from "./navbar.module.css";
-
+import logo from '../img/logo.jpg'
 function Navbar() {
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user);
@@ -17,7 +17,7 @@ function Navbar() {
         <div className={style.nav}>
           <div className={style.navFlex}>
             <Link to="/" className={style.logo}>
-              <h3>MIB</h3>
+            <img src={logo} alt='img'/>
             </Link>
             <div className={style.dropdown}>
               <p
