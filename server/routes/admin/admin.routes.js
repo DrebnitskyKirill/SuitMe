@@ -13,6 +13,7 @@ const {
 const storageFileupload = require("../../storageFileupload");
 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   const {
     category_id,
     price,
@@ -78,11 +79,13 @@ router.get("/allActivity", async (req, res) => {
 });
 
 router.post("/photo", async (req, res) => {
+  try {
   const file = req.files.homesImg;
   const arrUrl = await Promise.all(
     file.map(async (el) => await storageFileupload(el))
   );
   res.json(arrUrl);
+  } catch {console.error}
 });
 
 module.exports = router;
