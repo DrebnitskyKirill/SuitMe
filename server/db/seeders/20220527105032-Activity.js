@@ -6,7 +6,7 @@ module.exports = {
       "Activities",
       [
         {
-          name: "Свадьба",
+          name: "Свадьбу",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
