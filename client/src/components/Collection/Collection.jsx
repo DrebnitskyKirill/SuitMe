@@ -15,12 +15,15 @@ function Collection({ name }) {
 
 
   return (
+    <>
+     {name.length > 2 && <div><img src={`http://localhost:4000/photo/${name}.webp`}/></div>}
     <div className={style.flex}>
   
     <div className={style.listProduct}>
       {filterProductCategory.length > 0 ? filterProductCategory.map((el) => <Product key={el.id} item={el} />) : <div>No products avaible</div>}
     </div>
     </div>
+    </>
   );
 }
 
