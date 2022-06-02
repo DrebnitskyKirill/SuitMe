@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addOrderFetch } from '../../redux/reduxThunk/orderThunk';
+import ModalOfOrder from '../ModalOfOrder/ModalOfOrder';
 import style from './order.module.css'
 
 
@@ -9,12 +11,24 @@ function Order(props) {
   const { user } = useSelector(store => store.user)
   const {cart} = useSelector(store => store.cart)
   const dispatch = useDispatch()
+  const [modalOrder, setmodalOrder] = useState('')
+  const newNavigate = useNavigate()
+  const throwOver = () => {
+    newNavigate('/')
+  }
+
     const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
   
     const addOrder = async (data) => {
       dispatch(addOrderFetch({...data, user_id: user.id, status: 'Ожидание', cart}));
+      setmodalOrder(true)
+      setTimeout(throwOver, 1500)
     };
   return (
+    <>
+    {
+      modalOrder && <ModalOfOrder/>
+    }
     <form  onSubmit={handleSubmit(addOrder)}>
     <div className={style.order}>
       <h3>Заполните форму заказа!</h3>
@@ -40,9 +54,10 @@ function Order(props) {
            <input {...register("end_rent", { required: 'Заполните дату', })} type="date"/>
            <div>{errors?.rent && <p>{errors?.rent?.message}</p>}</div>
          </div>
-         <button className={style.button}  type='submit' disabled={!isValid}>Заказать</button>
+         <button className={style.button} type='submit' disabled={!isValid}>Заказать</button>
          </div>
    </form>
+   </>
   );
 }
 

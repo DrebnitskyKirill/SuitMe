@@ -6,8 +6,6 @@ function FirstThings() {
   const { allProducts } = useSelector((store) => store.products);
   const { allOrder } = useSelector((store) => store.order);
 
-  console.log(allOrder);
-  console.log(allProducts);
 
   return (
     <form className={style.first}>
