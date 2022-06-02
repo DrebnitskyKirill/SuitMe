@@ -9,9 +9,7 @@ import Login from "../Login/Login";
 import Admin from "../Admin/Admin";
 import { useDispatch } from "react-redux";
 import CollectionPage from "../CollectionPage/CollectionPage";
-import {
-  initProductsFetch,
-} from "../../redux/reduxThunk/productsThunk";
+import { initProductsFetch } from "../../redux/reduxThunk/productsThunk";
 import { useEffect } from "react";
 import Order from "../Order/Order";
 import Cart from "../Cart/Cart";

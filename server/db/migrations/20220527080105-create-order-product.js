@@ -20,9 +20,14 @@ module.exports = {
           key: 'id',
         }
       },
-      amount: {
+      size_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        primaryKey: true,
+        references: {
+          model: 'Sizes',
+          key: 'id',
+        }
       },
       createdAt: {
         allowNull: false,

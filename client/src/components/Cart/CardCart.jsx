@@ -12,10 +12,10 @@ function CardCart({ el }) {
   return (
     <div className={style.cartCard}>
       <p className={style.closeButton} onClick={delProduct}>
-        &times;
+        &times; 
       </p>
       <div className={style.cartImg}>
-        <img src="http://localhost:3000/photo/..." alt="img" />
+        <img src={`http://localhost:3000${el.Imgs[0].name}`} alt="img" />
       </div>
       <p>{el.name}</p>
     </div>

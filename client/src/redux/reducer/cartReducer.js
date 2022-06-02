@@ -13,7 +13,6 @@ export const cartReducer = (state = initialState, action) => {
         return element.id === action.payload.product.id;
       }
       let uniqueProduct = copyCart.some(is);
-      console.log(uniqueProduct);
       if (!uniqueProduct) {
         newTotalCost = copyTotalCost + action.payload.product.price;
         newCart = [...copyCart, action.payload.product];

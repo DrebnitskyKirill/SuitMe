@@ -11,7 +11,6 @@ const storageFileupload = require("../../storageFileupload");
 router.put("/", async (req, res) => {
   const { id, price, title, amount, name, size, color, activity, photo } =
     req.body;
-  console.log(req.body);
   const updatedProduct = await Product.update(req.body, {
     where: { name },
   });
@@ -24,7 +23,6 @@ router.put("/", async (req, res) => {
   const updateProduct_size = await Product_size.update(req.body, {
     where: { product_id: id, size_id: size },
   });
-  console.log(updateProduct_size);
 
   const updateProduct_color = await Product_color.update(req.body, {
     where: {

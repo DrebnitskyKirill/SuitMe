@@ -42,3 +42,6 @@ background-color: #009688;
 .pTitle{
   text-align: center;
 }
+.size{
+  border-radius: 20%;
+}
