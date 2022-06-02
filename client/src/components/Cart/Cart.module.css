@@ -18,7 +18,30 @@ img{
 }
 
 .cart{
-  display: flex; 
-  align-items: center; 
-  justify-content: space-evenly;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 600px;
+  justify-items: center;
+}
+.cartText{
+  text-align: center;
+  text-transform: uppercase;
+  color: #009688;
+}
+
+.mainText{
+  text-align: center;
+}
+.price{
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.listProduct{
+  width: 1100px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+}
+.summ {
+  margin-bottom: 20px;
 }
