@@ -39,6 +39,16 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: 'Blue',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: 'Pink',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
       
     ], {});
 

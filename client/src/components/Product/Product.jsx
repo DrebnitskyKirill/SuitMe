@@ -4,7 +4,6 @@ import style from './Product.module.css'
 
 function Product({ item }) {
   const navigate = useNavigate()
-  console.log(item);
   return (
     <div onClick={()=> navigate(`/cardProduct/${item.id}`)} className={style.card}>
       <div className={style.blocImg}>
