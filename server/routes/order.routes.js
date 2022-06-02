@@ -13,12 +13,14 @@ router.route('/order')
       start_rent,
       end_rent,
       cart,
+      status,
     } = req.body
     const newOrder = await Order.create({
       user_id,
-      name,
       address,
+      name,
       phone,
+      status,
       start_rent,
       end_rent,
     })
@@ -33,7 +35,7 @@ router.route('/order')
         size_id: el.Sizes,
       })
     })
-    try {
+    
       const cartJoinString = newCart.join()
       const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -64,11 +66,7 @@ router.route('/order')
 
       }
       transporter.sendMail(mailOptions)
-      res.status(201).json({ m: 'sdfghj' });
-
-    } catch (err) {
-      res.status(500).json({ err, message: 'Ошибка занесения данных' });
-    }
+   
     res.status(200).json(newOrder);
   })
 
