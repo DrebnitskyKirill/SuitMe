@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import style from "./home.module.css";
 
 function FirstThings() {
+  const { allProducts } = useSelector((store) => store.products);
+  const { allOrder } = useSelector((store) => store.order);
   const { activiti } = useSelector((store) => store.products);
   const navigate = useNavigate();
   const filtrEvent = (e) => {

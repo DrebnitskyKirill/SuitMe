@@ -5,25 +5,30 @@ import style from "./cardParams.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addProductCartAC } from "../../redux/actionCreators/cartAC";
+import ModalOrder from "../ModalOrder/ModalOrder";
 
 function CardParams() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { cart } = useSelector((store) => store.cart);
-  console.log(cart);
   const { allProducts } = useSelector((store) => store.products);
   const [size, setSize] = useState("");
   const dataProduct = allProducts.filter((el) => el.id === +id);
   const url = dataProduct[0].Imgs.map(
     (el) => `http://localhost:4000${el.name}`
   );
+  const changeTrash = () => {
+    setTrash(0)
+  }
   const order = () => {
     const data = {
       product: { ...dataProduct[0], Sizes: size },
     };
     dispatch(addProductCartAC(data));
+    setTrash(1)
+    setTimeout(changeTrash, 3000) 
   };
-
+  const [trash, setTrash] = useState(0)
   return (
     <>
       <div className={style.card}>
@@ -73,6 +78,7 @@ function CardParams() {
             </div>
             <div className={style.line}></div>
             <div>
+              {trash ? <ModalOrder/> : <div></div>} 
               <button onClick={order} className={style.rendButton}>
                 Добавить в корзину
               </button>
