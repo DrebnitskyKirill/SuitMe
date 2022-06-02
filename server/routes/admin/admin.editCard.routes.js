@@ -42,11 +42,10 @@ router.put("/", async (req, res) => {
   res.send({ message: "Успешно" });
 });
 // router.put("/photo", async (req, res) => {
-//   const file = req.files.homesImg;
+//   const file = req.files?.homesImg;
 //   const arrUrl = await Promise.all(
 //     file.map(async (el) => await storageFileupload(el))
 //   );
-
 //   res.json(arrUrl);
 // });
 module.exports = router;

@@ -3,15 +3,14 @@ import { useSelector } from "react-redux";
 import style from "./home.module.css";
 
 function FirstThings() {
-  const { allProducts, orders } = useSelector((store) => store.products);
-  // console.log(orders[0]?.start_rent);
-  // console.log(allProducts[0]);
+  const { allProducts } = useSelector((store) => store.products);
+  const { allOrder } = useSelector((store) => store.order);
 
-  const values = (e) => {
-    const val = e.event.target.value
-  }
+  console.log(allOrder);
+  console.log(allProducts);
+
   return (
-    <form className={style.first} onSubmit={values}>
+    <form className={style.first}>
       <div className={style.firstBloc}>
         <h2>Я выбираю</h2>
         <select>
@@ -21,10 +20,12 @@ function FirstThings() {
           <option>ВАЖНОЕ СОБЫТИЕ</option>
         </select>
         <h2>на</h2>
-        <input type="date" name='date' className={style.calendar} />
+        <input type="date" className={style.calendar} />
       </div>
       <div className={style.buttonFlex}>
-        <button type="submit" className={style.buttonFirst}>НАЧАТЬ</button>
+        <button type="submit" className={style.buttonFirst}>
+          НАЧАТЬ
+        </button>
       </div>
     </form>
   );

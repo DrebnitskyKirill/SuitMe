@@ -1,4 +1,4 @@
-import { INIT_ORDER, INIT_PRODUCTS } from '../actionType/productsAt';
+import {  INIT_PRODUCTS } from '../actionType/productsAt';
 
 export const initProductsAC = (payload) => {
   return {
@@ -6,9 +6,4 @@ export const initProductsAC = (payload) => {
     payload,
   }
 };
-export const initOrderAC = (payload) => {
-  return {
-    type: INIT_ORDER,
-    payload,
-  };
-};
+

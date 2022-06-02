@@ -4,13 +4,13 @@ import style from './Product.module.css'
 
 function Product({ item }) {
   const navigate = useNavigate()
-
+  console.log(item);
   return (
     <div onClick={()=> navigate(`/cardProduct/${item.id}`)} className={style.card}>
       <div className={style.blocImg}>
-        <img src={`http://localhost:4000${item.Imgs[0].name}`} alt='img' className={style.img}/>
+        <img src={`http://localhost:4000${item.Imgs[1].name}`} alt='img' className={style.img}/>
       </div>
-      <h3 className={style.textName}>{item.name}</h3>
+      <h3 className={style.textName}>{item?.name}</h3>
       <h3 className={style.textName}>Аренда: {item.price}p</h3>
     </div>
   );

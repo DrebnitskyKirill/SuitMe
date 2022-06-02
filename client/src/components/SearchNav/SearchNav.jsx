@@ -1,11 +1,11 @@
 import React from 'react';
-import ActionSearh from '../ActionSearch/ActionSearh';
+import ActionSearch from '../ActionSearch/ActionSearch';
 import DateSearcher from '../DateSearcher/DateSearcher';
 
 function SearchNav(props) {
   return (
     <div>
-      <ActionSearh />
+      <ActionSearch />
       <DateSearcher/>
     </div>
 

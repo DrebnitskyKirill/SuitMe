@@ -10,7 +10,6 @@ import style from "./AdminForm.module.css";
 export default function AdminForm() {
   const { size, color, photo, activity } = useSelector((store) => store.admin);
   const [state, setState] = useState([]);
-  
   const dispatch = useDispatch();
   const {
     register,
