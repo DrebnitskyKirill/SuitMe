@@ -8,10 +8,10 @@ function Logout() {
   const nav = useNavigate()
   useEffect(() => {
     dispatch(logoutFetch())
+    nav('/')
   }, [dispatch])
   return (
     <>
-    lllllll
     </>
   );
 }

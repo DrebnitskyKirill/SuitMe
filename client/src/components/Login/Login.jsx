@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 import { logUserFetch } from '../../redux/reduxThunk/userThunk';
 import style from '../Registration/registration.module.css'
 
-function Login({open}) {
+function Login({open,closeModal}) {
   const dispatch = useDispatch()
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
 
   const loginUser = (data) => {
     dispatch(logUserFetch(data))
-    
+    closeModal()
   };
   return (
     <form className="container center" onSubmit={handleSubmit(loginUser)}>
