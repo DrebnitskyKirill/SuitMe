@@ -13,8 +13,8 @@ function Modal ({isOpen, closeModal}) {
       {choice === 1 && <h3 style={{'textAlign':"center"}}>Войти</h3>}
      { choice === 2 && <h3 style={{'textAlign':"center"}}>Зарегистрироваться</h3>}
       </div>
-      {choice === 1 && <Login open={()=>setChoice(2)}/>}
-     {choice === 2 && <Registration open={()=>setChoice(1)}/>}
+  {choice === 1 && <Login open={()=>setChoice(2)} closeModal={closeModal}/>}
+     {choice === 2 && <Registration open={()=>setChoice(1)} closeModal={closeModal}/>}
       </div>
     </div>
   );

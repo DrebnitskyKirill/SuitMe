@@ -21,12 +21,18 @@ function CardParams() {
     setTrash(0)
   }
   const order = () => {
-    const data = {
-      product: { ...dataProduct[0], Sizes: size },
-    };
-    dispatch(addProductCartAC(data));
-    setTrash(1)
-    setTimeout(changeTrash, 3000) 
+    if(size.length){
+      const data = {
+        product: { ...dataProduct[0], Sizes: +size },
+      };
+      dispatch(addProductCartAC(data));
+      setTrash(1)
+      setTimeout(changeTrash, 3000) 
+    }else{
+      setTrash(1)
+      setTimeout(changeTrash, 3000) 
+    }
+   
   };
   const [trash, setTrash] = useState(0)
   return (
@@ -69,7 +75,7 @@ function CardParams() {
                 {" "}
                 Выберите размер:{" "}
                 {dataProduct[0].Sizes.map((el) => (
-                  <button className={style.size} onClick={() => setSize(el.id)}>
+                  <button className={style.size} onClick={() => setSize(el.id.toString())}>
                     {el.name}
                   </button>
                 ))}{" "}
@@ -78,7 +84,7 @@ function CardParams() {
             </div>
             <div className={style.line}></div>
             <div>
-              {trash ? <ModalOrder/> : <div></div>} 
+              {trash ? <ModalOrder size={size}/> : <div></div>} 
               <button onClick={order} className={style.rendButton}>
                 Добавить в корзину
               </button>

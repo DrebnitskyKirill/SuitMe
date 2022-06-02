@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux';
 import { addUserFetch } from '../../redux/reduxThunk/userThunk';
 import style from './registration.module.css'
 
-function Registration({open}) {
+function Registration({open,closeModal}) {
   const dispatch = useDispatch()
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
 
   const addUser = async (data) => {
     dispatch(addUserFetch(data));
+    closeModal()
   };
 
   return (

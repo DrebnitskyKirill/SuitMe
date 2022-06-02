@@ -1,11 +1,17 @@
 import './ModalOrder.css'
 
-const ModalOrder = () => {
+const ModalOrder = ({size}) => {
   // прописать css модалки
   return (
-    <div className='closeModal'>
+    <>
+    {size.length > 0 ? <div className='closeModal'>
       Товар добавлен в корзину
-    </div>
+    </div> : <div className='closeModal'>
+    Выбирите размер
+  </div>}
+    
+    </>
+   
   );
 };
 
