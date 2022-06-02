@@ -9,15 +9,10 @@ import Login from "../Login/Login";
 import Admin from "../Admin/Admin";
 import { useDispatch } from "react-redux";
 import CollectionPage from "../CollectionPage/CollectionPage";
-import {
-  initProductsFetch,
-  showOrdersFetch,
-} from "../../redux/reduxThunk/productsThunk";
-import { showProductsFetch } from "../../redux/reduxThunk/productsThunk";
+import { initProductsFetch, showOrdersFetch, } from "../../redux/reduxThunk/productsThunk";
 import { useEffect } from "react";
 import Order from "../Order/Order";
 import Cart from "../Cart/Cart";
-import { useDispatch } from "react-redux";
 
 
 function App() {
@@ -28,21 +23,21 @@ function App() {
   }, [dispatch]);
   return (
     <>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/collection" element={<CollectionPage />} />
-            <Route path="/cardproduct/:id" element={<CardParams />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/collection/:id" element={<CollectionPage />} />
-              <Route path="/cart" element={<Cart/>} />
-            <Route path="/order" element={<Order />} />
-          </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/collection" element={<CollectionPage />} />
+          <Route path="/cardproduct/:id" element={<CardParams />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/collection/:name" element={<CollectionPage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<Order />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -27,9 +27,14 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id',
       }
     },
-    amount: {
+    size_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
+      references: {
+        model: 'Sizes',
+        key: 'id',
+      }
     },
   }, {
     sequelize,

@@ -17,19 +17,18 @@ function Navbar() {
         <div className={style.nav}>
           <div className={style.navFlex}>
             <Link to="/" className={style.logo}>
-              MIB
+              <h3>MIB</h3>
             </Link>
             <div className={style.dropdown}>
               <p
                 className={style.categories}
                 onClick={() => setStatusCategory(!statusCategory)}
               >
-                катигории
+                Категории
               </p>
               <div
-                className={`${style.dropdownContent} ${
-                  statusCategory && style.show
-                }`}
+                className={`${style.dropdownContent} ${statusCategory && style.show
+                  }`}
               >
                 {categories.map((el) => (
                   <div key={el.id} className={style.categories}>
@@ -48,9 +47,10 @@ function Navbar() {
           <ul className={style.navFlex}>
             <li>
               <a className={style.a} onClick={() => setModal(true)}>
-                Login
+                Войти
               </a>
             </li>
+            <li><Link to='/cart'>Cart</Link></li>
           </ul>
         </div>
       </nav>

@@ -6,7 +6,6 @@ router.route("/allOrder")
   const allOrders = await Order.findAll({
     raw: true,
   });
-console.log(allOrders);
   res.json({ allOrders });
 });
 

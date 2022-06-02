@@ -41,8 +41,10 @@ function CardParams() {
             <h4 className={style.pTitle}>{dataProduct[0].name}</h4>
             <div className={style.line}></div>
             <div >
-              <h4>Арендовать от:   {dataProduct[0].price} ₽</h4>
+              <h4>Арендовать:   {dataProduct[0].price} ₽</h4>
             </div>
+            <div className={style.line}></div>
+
             <div>
               <h4>Описание товара: </h4>
               <p className={style.title}> {dataProduct[0].title}
@@ -50,16 +52,15 @@ function CardParams() {
             </div>
             <div className={style.line}></div>
             <div>
-              <h4> Мероприятие : {dataProduct[0].Activities[0].name} </h4>
+              <h4> Образ на: </h4>
+              <p>{dataProduct[0].Activities[0].name} </p>
             </div>
-            <div>
-              <h4> Цвет : {dataProduct[0].Colors[0].name} </h4>
-            </div>
-            <div>
+            <div className={style.line}></div>
 
-              <h4 className={style.h4}> ХАРАКТЕРИСТИКА </h4>
-              <p> Размер - { dataProduct[0].Sizes.map((el) => <button onClick={()=>setSize(el.id)}>{el.name}</button>)} </p>
-              <p> Цвет -  {dataProduct[0].Colors[0].name} </p>
+            <div>
+              <h4 className={style.h4}> Характеристика: </h4>
+              <p> Выберите размер: { dataProduct[0].Sizes.map((el) => <button className={style.size} onClick={()=>setSize(el.id)}>{el.name}</button>)} </p>
+              <p> Цвет:  {dataProduct[0].Colors[0].name} </p>
             </div>
             <div className={style.line}></div>
             <div>

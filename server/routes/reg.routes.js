@@ -13,7 +13,6 @@ router.route('/registration')
       password, 
     } = req.body;
     const thisUser = await User.findOne({ where: { email } });
-
     if (thisUser) {
       
       res.json({message: 'Такой пользователь уже существует'})
