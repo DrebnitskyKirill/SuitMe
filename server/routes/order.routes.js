@@ -71,5 +71,3 @@ router.route('/order')
   })
 
 module.exports = router;
-
-
