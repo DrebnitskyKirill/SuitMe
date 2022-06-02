@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addPhotoFetch,
-  addProductFetch,
+
 } from "../../../redux/reduxThunk/adminThunk";
+import { addProductFetch } from "../../../redux/reduxThunk/productsThunk";
 import style from "./AdminForm.module.css";
 
 export default function AdminForm() {

@@ -1,5 +1,4 @@
 import {
-  ADD_PRODUCT,
   EDIT_PRODUCT,
   INIT_COLOR,
   INIT_SIZE,
@@ -12,11 +11,6 @@ const initialState = { product: [], size: [], color: [], activity: [], photo: []
 
 export const adminReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_PRODUCT:
-      return {
-        ...state,
-        product: [...state.product, action.payload],
-      };
     case SEARCH_PRODUCT:
       return {
         ...state,
@@ -43,6 +37,7 @@ export const adminReducer = (state = initialState, action) => {
         activity: action.payload.allActivity,
       };
       case ADD_PHOTO:
+        console.log(action.payload);
         return {
           ...state, photo: action.payload 
         }

@@ -18,12 +18,28 @@
   justify-content: center;
 }
 .textName{
-  
+  letter-spacing: 1px;
+  font-family: "Neuzeit Office",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  font-size: 16px;
   margin: 0;
+  font-weight: 700;
+  line-height: 1.6;
+  font-style: normal;
+  text-transform: uppercase;
+  padding: 6px;
+  color:cadetblue;
+}
+.text2Name{
+  font-family: "Neuzeit Office",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  font-style: bold;
+  margin: 0;
+  font-size: 18px;
+  font-style: normal;
 }
 .card{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  margin-top: 20px;
 }

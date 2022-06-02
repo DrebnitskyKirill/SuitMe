@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { delProductCartAC } from "../../redux/actionCreators/cartAC";
 import style from "./Cart.module.css";
 
+
 function CardCart({ el }) {
   const dispatch = useDispatch();
 
@@ -17,7 +18,8 @@ function CardCart({ el }) {
       <div className={style.cartImg}>
         <img src={`http://localhost:3000${el.Imgs[0].name}`} alt="img" />
       </div>
-      <p>{el.name}</p>
+      <p className={style.cartText}>{el.name}</p>
+      <p className={style.price}>Цена аренды: {el.price} ₽</p>
     </div>
   );
 }
