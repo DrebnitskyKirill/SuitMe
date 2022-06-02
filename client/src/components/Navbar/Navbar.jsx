@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
 import style from "./navbar.module.css";
 import logo from '../img/logo.jpg'
 function Navbar() {
-  const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user);
   const [modal, setModal] = useState(false);
   const [statusCategory, setStatusCategory] = useState(false);
@@ -17,6 +16,7 @@ function Navbar() {
         <div className={style.nav}>
           <div className={style.navFlex}>
             <Link to="/" className={style.logo}>
+
             <img src={logo} alt='img'/>
             </Link>
             <div className={style.dropdown}>
@@ -24,7 +24,7 @@ function Navbar() {
                 className={style.categories}
                 onClick={() => setStatusCategory(!statusCategory)}
               >
-                Категории
+                Коллекции
               </p>
               <div
                 className={`${style.dropdownContent} ${statusCategory && style.show
@@ -45,12 +45,18 @@ function Navbar() {
             </div>
           </div>
           <ul className={style.navFlex}>
-            <li>
-              <a className={style.a} onClick={() => setModal(true)}>
-                Войти
-              </a>
-            </li>
-            <li><Link to='/cart'>Cart</Link></li>
+            {user.hasOwnProperty("id") ?
+              <> <li><Link to='/cart'>Корзина</Link></li>
+                <li><Link to='/logout'>Выйти</Link></li>
+              </>
+              :
+              <li>
+                <a className={style.a} onClick={() => setModal(true)}>
+                  Войти
+                </a>
+              </li>
+            }
+
           </ul>
         </div>
       </nav>

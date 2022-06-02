@@ -19,8 +19,8 @@ router.route("/allcollection").get(async (req, res) => {
     ],
   });
   const categories = await Category.findAll();
-
-  res.json({ allProducts, categories });
+  const activiti = await Activity.findAll()
+  res.json({ allProducts, categories, activiti });
 });
 
 module.exports = router;

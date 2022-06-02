@@ -12,7 +12,6 @@ export default function AdminFormEdit() {
     (store) => store.admin
   );
   const dispatch = useDispatch();
-  console.log(photo);
   const [state, setState] = useState([]);
   const sizeValue = (e) => {
     setState((prev) => [...prev, e.target.value]);
@@ -32,9 +31,7 @@ export default function AdminFormEdit() {
       dispatch(editPhotoFetch(data));
     } catch (error) {}
   };
-console.log(state);
   const editProduct = (data) => {
-    console.log(data);
     dispatch(editProductFetch({ ...data, photo, id: product.id, size: state }));
   };
   return (
