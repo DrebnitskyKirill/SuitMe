@@ -48,6 +48,8 @@ li{
 }
 .categories{
   color: white;
+  font-size: 22px;
+  margin-top: 24px;
   background-color: black;
   text-align: center;
   width: 200px;

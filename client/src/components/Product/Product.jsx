@@ -10,7 +10,7 @@ function Product({ item }) {
         <img src={`http://localhost:4000${item.Imgs[1].name}`} alt='img' className={style.img}/>
       </div>
       <h3 className={style.textName}>{item?.name}</h3>
-      <h3 className={style.textName}>Аренда: {item.price}p</h3>
+      <h3 className={style.text2Name}>АРЕНДА: {item.price} ₽</h3>
     </div>
   );
 }
