@@ -43,6 +43,7 @@ export default function AdminFormEdit() {
               {...register("name", { required: "Необходимо указать название" })}
               type="text"
               className="form-control"
+              autoComplete="off"
               placeholder="Изменить название"
             />
             <br />
@@ -57,6 +58,7 @@ export default function AdminFormEdit() {
               })}
               type="text"
               className="form-control"
+              autoComplete="off"
               placeholder="Изменить описание"
               required
             />
@@ -70,6 +72,7 @@ export default function AdminFormEdit() {
               {...register("price", { required: "Необходимо указать цену" })}
               type="number"
               className="form-control"
+              autoComplete="off"
               placeholder="Изменить цену"
             />
             <br />
@@ -84,6 +87,7 @@ export default function AdminFormEdit() {
               })}
               type="number"
               className="form-control"
+              autoComplete="off"
               placeholder="Изменить количество"
               required
             />
@@ -98,6 +102,7 @@ export default function AdminFormEdit() {
               multiple
               onChange={sendFilesEdit}
               placeholder="Изменить фото"
+              autoComplete="off"
             />
             <br />
             <div>{errors?.img && <p>{errors?.img?.message}</p>}</div>

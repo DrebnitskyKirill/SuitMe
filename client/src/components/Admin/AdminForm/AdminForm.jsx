@@ -57,6 +57,7 @@ export default function AdminForm() {
               {...register("name", { required: "Необходимо указать название" })}
               type="text"
               className="form-control"
+              autoComplete="off"
               placeholder="Название"
             />
             <br />
@@ -70,6 +71,7 @@ export default function AdminForm() {
               })}
               type="text"
               className="form-control"
+              autoComplete="off"
               placeholder="Описание"
               required
             />
@@ -83,6 +85,7 @@ export default function AdminForm() {
               {...register("price", { required: "Необходимо указать цену" })}
               type="number"
               className="form-control"
+              autoComplete="off"
               placeholder="Цена"
             />
             <br />
@@ -133,6 +136,7 @@ export default function AdminForm() {
               })}
               type="number"
               className="form-control"
+              autoComplete="off"
               placeholder="Количество"
               required
             />
@@ -146,6 +150,7 @@ export default function AdminForm() {
               multiple
               onChange={sendFiles}
               placeholder="Фото"
+              autoComplete="off"
             />
             <br />
             <div>{errors?.img && <p>{errors?.img?.message}</p>}</div>
