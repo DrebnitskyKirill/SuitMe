@@ -12,11 +12,9 @@ function Collection({ name }) {
     filterProductCategory = allProducts.filter(el => el.Category.name === name)
   }
   
-
-
   return (
     <>
-     {name.length > 2 && <div><img src={`http://localhost:4000/photo/${name}.webp`}/></div>}
+     {name.length > 2 && <div><img src={`http://localhost:4000/photo/${name}.webp`} alt='img'/></div>}
     <div className={style.flex}>
   
     <div className={style.listProduct}>
