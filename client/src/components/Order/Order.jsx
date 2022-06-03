@@ -16,6 +16,7 @@ function Order(props) {
   const throwOver = () => {
     newNavigate('/')
   }
+  const [orderModal, setOrderModal] = useState(false)
 
     const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onBlur' }); // 'onBlur' - покажет ошибку в случае если изменил фокус инпута
   
@@ -23,6 +24,8 @@ function Order(props) {
       dispatch(addOrderFetch({...data, user_id: user.id, status: 'Ожидание', cart}));
       setmodalOrder(true)
       setTimeout(throwOver, 1500)
+      setTimeout(setOrderModal(true), 500)
+      
     };
   return (
     <>
@@ -53,6 +56,7 @@ function Order(props) {
            <h4>Укажите дату завершения аренды товара: </h4>
            <input {...register("end_rent", { required: 'Заполните дату', })} type="date"/>
            <div>{errors?.rent && <p>{errors?.rent?.message}</p>}</div>
+        {orderModal && <div>Заказ успешно создан, ожидайте сообщение на почту</div>}
          </div>
          <button className={style.button} type='submit' disabled={!isValid}>Заказать</button>
          </div>
