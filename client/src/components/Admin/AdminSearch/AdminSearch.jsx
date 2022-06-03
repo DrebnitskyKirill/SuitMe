@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { searchProductFetch } from "../../../redux/reduxThunk/adminThunk";
 import style from './AdminSearch.module.css'
 
@@ -21,6 +21,7 @@ export default function AdminSearch() {
             type="text"
             className=""
             placeholder="Поиск товара..."
+            autoComplete="off"
           />
           <button type="submit" className={style.buttonForm}>Поиск</button>
         </div>
