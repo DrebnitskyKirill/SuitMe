@@ -16,7 +16,6 @@ function Collection({ name }) {
     <>
      {name.length > 2 && <div><img src={`http://localhost:4000/photo/${name}.webp`} alt='img'/></div>}
     <div className={style.flex}>
-  
     <div className={style.listProduct}>
       {filterProductCategory.length > 0 ? filterProductCategory.map((el) => <Product key={el.id} item={el} />) : <div>No products avaible</div>}
     </div>
