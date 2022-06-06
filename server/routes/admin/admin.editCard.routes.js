@@ -11,39 +11,37 @@ const storageFileupload = require("../../storageFileupload");
 router.put("/", async (req, res) => {
   const { id, price, title, amount, name, size, color, activity, photo } =
     req.body;
-  const updatedProduct = await Product.update(req.body, {
-    where: { name },
+  const updatedProduct = await Product.update({price, title, amount, name}, {
+    where: { id },
   });
-  const updatePhoto = await Promise.all(
+  const delImg = await Img.destroy({where:{product_id: id }})
+  const createPhoto = await Promise.all(
     photo.map(
       async (el) =>
-        await Img.update(req.body, { where: { product_id: id, name: el } })
+        await Img.create({ product_id: id ,name:el})
     )
   );
-  const updateProduct_size = await Product_size.update(req.body, {
-    where: { product_id: id, size_id: size },
+  const updateProduct_size = await Product_size.update({size_id: size},{
+    where: { product_id: id },
   });
 
-  const updateProduct_color = await Product_color.update(req.body, {
+const updateProduct_color = await Product_color.update({color_id: color}, {
     where: {
-      product_id: id,
-      color_id: color,
-      amount: amount,
+      product_id: id
     },
   });
-  const updateProduct_activity = await Product_activity.update(req.body, {
+  const updateProduct_activity = await Product_activity.update({activity_id: activity}, {
     where: {
-      product_id: id,
-      activity_id: activity,
+      product_id: id
     },
   });
   res.send({ message: "Успешно" });
-// });
-// router.put("/photo", async (req, res) => {
-//   const file = req.files?.homesImg;
-//   const arrUrl = await Promise.all(
-//     file.map(async (el) => await storageFileupload(el))
-//   );
-//   res.json(arrUrl);
+});
+router.post("/photo", async (req, res) => {
+  const file = req.files?.homesImg;
+  const arrUrl = await Promise.all(
+    file.map(async (el) => await storageFileupload(el))
+  );
+  res.json(arrUrl);
 })
 module.exports = router;
