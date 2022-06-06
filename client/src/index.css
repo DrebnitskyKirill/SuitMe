@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: "Neuzeit Office",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  font: italic 1.2em "Fira Sans", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
