@@ -40,17 +40,17 @@ router.route('/order')
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'belka.anka91@gmail.com',
-          pass: 'ovofqkagifdkkqum'
+          user: 'suitmeelbrus@gmail.com',
+          pass: 'eilmansaxkgllxis'
         }
       })
 
 
       const mailOptions = {
-        from: 'belka.anka91@gmail.com',
-        to: 'belka.anka91@gmail.com',
+        from: 'suitmeelbrus@gmail.com',
+        to: 'suitmeelbrus@gmail.com',
         subject: "Suit_Me",
-        text: " ",
+        text: "Новый Заказ",
         html: `
      <div>
        <h3>Заказ №${newOrder.id}</h3>
